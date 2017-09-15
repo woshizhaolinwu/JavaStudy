@@ -23,6 +23,8 @@ import java.util.TreeSet;
 
 import jrdcom.com.javademo.Abstract.Student;
 import jrdcom.com.javademo.Abstract.Teacher;
+import jrdcom.com.javademo.FileOperate.JrdFile;
+import jrdcom.com.javademo.FileOperate.JrdFileCopy;
 import jrdcom.com.javademo.SafeThread.MyRunnable;
 import jrdcom.com.javademo.SafeThread.SyncThreadDemo;
 import jrdcom.com.javademo.SafeThread.ThreadJoinDemo;
@@ -91,6 +93,9 @@ public class JrdContentFragment extends Fragment {
                 break;
             case JrdCommon.LIST_COLLECTION:
                 text = SetDemo();
+                break;
+            case JrdCommon.LIST_IO:
+                text = setIO();
                 break;
 
         }
@@ -393,5 +398,17 @@ public class JrdContentFragment extends Fragment {
 
     private void sop(String text){
         content.setText(text);
+    }
+
+    /*IO 操作*/
+    private String setIO(){
+        JrdFile jrdFile = new JrdFile(getContext());
+        //jrdFile.writeFile();
+        //jrdFile.writeFile();
+
+        jrdFile.readFile();
+        //JrdFileCopy jrdFileCopy = new JrdFileCopy(getContext());
+        //jrdFileCopy.copyFile();
+        return JrdCommon.getStringBuffer();
     }
 }
